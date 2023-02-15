@@ -26,10 +26,16 @@ export default function ContactsForm({ onSubmit }) {
     }
   };
 
+  const resetForm = () => {
+    setName('');
+    setNumber('');
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
 
     onSubmit(name, number, nanoid());
+    resetForm();
   };
 
   return (
@@ -50,13 +56,15 @@ export default function ContactsForm({ onSubmit }) {
         id="outlined-search"
         label="Full Name"
         name="name"
-        type="search"
+        type="text"
+        value={name}
       />
       <TextField
         id="outlined-search"
         label="Number"
         name="number"
-        type="search"
+        type="number"
+        value={number}
       />
       <Button variant="contained" size="small" type="submit">
         Add contact
