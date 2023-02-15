@@ -63,7 +63,7 @@ export default function ContactsForm({ onSubmit }) {
         id="outlined-search"
         label="Number"
         name="number"
-        type="number"
+        type="tel"
         value={number}
       />
       <Button variant="contained" size="small" type="submit">
